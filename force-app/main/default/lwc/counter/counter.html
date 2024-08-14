@@ -1,0 +1,11 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Counter" icon-name="utility:reminder">
+        <div class="slds-var-m-around_medium">
+            Count: {counter}
+        </div>
+        <div class="slds-var-m-around_medium">
+            <c-counter-action onincrement={onIncrement} ondecrement={onDecrement}></c-counter-action>
+        </div>
+    </lightning-card>
+</template>

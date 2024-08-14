@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Wire With Param" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-47">
+                    <abbr class="slds-required" title="required">* </abbr>Account name</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="text-input-id-47" placeholder="Placeholder text…" required=""
+                        class="slds-input" value={keyword} onchange={handleInputChange} />
+                </div>
+            </div>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped"
+                    aria-label="Accounts Table">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={accounts} for:item="acc">
+                            <tr key={acc.Id} class="slds-hint-parent">
+                                <td>{acc.Name}</td>
+                                <td>{acc.Phone}</td>
+                                <td></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </lightning-card>
+</template>

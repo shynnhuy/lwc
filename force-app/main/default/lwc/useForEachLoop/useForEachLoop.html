@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Use For Each Loop" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped"
+                aria-label="Student Table">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={students} for:item="student" for:index="index">
+                        <tr key={student.id} class="slds-hint-parent">
+                            <td>{student.Name}</td>
+                            <td>{student.Class}</td>
+                            <td>{student.Fee}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

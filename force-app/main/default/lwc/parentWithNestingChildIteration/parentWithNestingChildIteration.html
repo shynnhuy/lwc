@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="I am parent with Nesting" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <lightning-input onchange={handleOnChange} label="Search"></lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template if:true={data}>
+                <template for:each={data} for:item="acc">
+                    <c-child-component my-data={acc} key={acc.Id}></c-child-component>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
